@@ -10,17 +10,25 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN")
+            Text("89")
+            HStack {
+                Text("1")
+                Slider(value: .constant(50), in: 1.0...100.0)
+                Text("100")
+            }
+            Button("Hit me") { }
         }
-        .padding()
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        ContentView()
+            .previewLayout(
+                .fixed(width:568, height:320)
+            )
     }
 }
