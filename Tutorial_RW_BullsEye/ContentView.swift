@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var alertIsVisible: Bool = false
+    
     var body: some View {
+        
         VStack {
             Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN")
                 .bold()
                 .kerning(2.0)
                 .multilineTextAlignment(.center)
                 .lineSpacing(4.0)
-                .font(.footnote) 
+                .font(.footnote)
             Text("89")
                 .kerning(-1.0)
                 .font(.largeTitle)
@@ -28,7 +32,19 @@ struct ContentView: View {
                 Text("100")
                     .bold()
             }
-            Button("Hit me") { }
+            
+            Button(action: {
+                print("Test")
+                self.alertIsVisible = true
+            }) {
+                Text("Hit me")
+            }
+            .alert("Hello there!", isPresented: $alertIsVisible) {
+              Button("Awesome!") { }
+            } message: {
+              Text("This is my first pop-up")
+            }
+          
         }
         
     }
