@@ -42,16 +42,14 @@ struct ContentView: View {
             }) {
                 Text("Hit me")
             }
+            
+            // This whole part was copied from the Tutorial
             .alert("Hello there!", isPresented: $alertIsVisible) {
-                
-                Button("The slider's value is \(Int(self.sliderValue)).\n" +
-                       "You scored \(self.game.points(sliderValue) points this round.") { }
-                // Buradaki "+" isareti sayesinde birden fazla Srtring ararda yazilabiliyor
-                // Derste gosterdigi yontem farkliydi. Kafama yatmadigi icin bu yontemi buldum (https://stackoverflow.com/a/41485484/20100031)
-                
-            } message: {
-                Text("This is my first pop-up")
-            }
+                Button("Awesome!") { }
+              } message: {
+                let roundedValue = Int(sliderValue.rounded())
+                Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round.")
+              }
             
             
             
