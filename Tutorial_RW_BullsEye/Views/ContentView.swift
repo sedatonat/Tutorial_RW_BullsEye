@@ -34,7 +34,7 @@ struct ContentView: View {
                 Text("100")
                     .bold()
             }
-            
+                
             Button(action: {
                 print("Test")
                 self.alertIsVisible = true

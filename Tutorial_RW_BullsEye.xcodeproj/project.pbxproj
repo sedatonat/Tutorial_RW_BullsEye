@@ -32,6 +32,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E33CFE58290A1D3F00314174 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E397AB2B2905B1A8008B79F2 /* Assets.xcassets */,
+				E397AB2D2905B1A8008B79F2 /* Preview Content */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E33CFE59290A1E1400314174 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E397AB292905B1A7008B79F2 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E33CFE5A290A1E2300314174 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		E397AB1B2905B1A7008B79F2 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +76,9 @@
 		E397AB262905B1A7008B79F2 /* Tutorial_RW_BullsEye */ = {
 			isa = PBXGroup;
 			children = (
-				E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */,
-				E397AB292905B1A7008B79F2 /* ContentView.swift */,
-				E397AB2B2905B1A8008B79F2 /* Assets.xcassets */,
-				E397AB2D2905B1A8008B79F2 /* Preview Content */,
+				E33CFE5A290A1E2300314174 /* App */,
+				E33CFE59290A1E1400314174 /* Views */,
+				E33CFE58290A1D3F00314174 /* Models */,
 			);
 			path = Tutorial_RW_BullsEye;
 			sourceTree = "<group>";
@@ -266,7 +290,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Tutorial_RW_BullsEye/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tutorial_RW_BullsEye/Models/Preview Content\"";
 				DEVELOPMENT_TEAM = AM5TRWBH6U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Tutorial_RW_BullsEye/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tutorial_RW_BullsEye/Models/Preview Content\"";
 				DEVELOPMENT_TEAM = AM5TRWBH6U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
