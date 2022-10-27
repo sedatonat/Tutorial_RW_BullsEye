@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E37DA99D290A21A500910688 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DA99C290A21A500910688 /* Game.swift */; };
 		E397AB282905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */; };
 		E397AB2A2905B1A7008B79F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397AB292905B1A7008B79F2 /* ContentView.swift */; };
 		E397AB2C2905B1A8008B79F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397AB2B2905B1A8008B79F2 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E37DA99C290A21A500910688 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E397AB242905B1A7008B79F2 /* Tutorial_RW_BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial_RW_BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial_RW_BullsEyeApp.swift; sourceTree = "<group>"; };
 		E397AB292905B1A7008B79F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			children = (
 				E397AB2B2905B1A8008B79F2 /* Assets.xcassets */,
 				E397AB2D2905B1A8008B79F2 /* Preview Content */,
+				E37DA99C290A21A500910688 /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E397AB2A2905B1A7008B79F2 /* ContentView.swift in Sources */,
+				E37DA99D290A21A500910688 /* Game.swift in Sources */,
 				E397AB282905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

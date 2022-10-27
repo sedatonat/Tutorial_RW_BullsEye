@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State private var alertIsVisible: Bool = false
     @State private var sliderValue: Double = 10
+    @State private var game: Game = Game() // "Game = Game()" New Instance of Game demek
     
     
     var body: some View {
@@ -22,7 +23,7 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(4.0)
                 .font(.footnote)
-            Text("89")
+            Text(String(game.target)) // Text in icine Integer koyamayacagimiz icin onu String 'e cevirerek koyduk
                 .kerning(-1.0)
                 .font(.largeTitle)
                 .fontWeight(.black)
@@ -43,7 +44,9 @@ struct ContentView: View {
             }
             .alert("Hello there!", isPresented: $alertIsVisible) {
                 
-                Button("The slider's value is \(Int(self.sliderValue))") { }
+                Button("The slider's value is \(Int(self.sliderValue)).\n" +
+                       "You scored \(self.game.points(sliderValue) points this round.") { }
+                // Buradaki "+" isareti sayesinde birden fazla Srtring ararda yazilabiliyor
                 // Derste gosterdigi yontem farkliydi. Kafama yatmadigi icin bu yontemi buldum (https://stackoverflow.com/a/41485484/20100031)
                 
             } message: {
