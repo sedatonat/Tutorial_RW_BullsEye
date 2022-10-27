@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var alertIsVisible: Bool = false
-    @State private var sliderValue: Double = 10.0
+    @State private var sliderValue: Double = 10
     
     
     var body: some View {
@@ -30,7 +30,7 @@ struct ContentView: View {
             HStack {
                 Text("1")
                     .bold()
-                Slider(value: self.$sliderValue, in: 1.0...100.0)
+                Slider(value: self.$sliderValue, in: 1...100) // "in: 1...100" sonrasinda "step:1" yazarsan 1'erli basamaklarla veriyor
                 Text("100")
                     .bold()
             }
@@ -42,7 +42,10 @@ struct ContentView: View {
                 Text("Hit me")
             }
             .alert("Hello there!", isPresented: $alertIsVisible) {
-                Button("Awesome!") { }
+                
+                Button("The slider's value is \(Int(self.sliderValue))") { }
+                // Derste gosterdigi yontem farkliydi. Kafama yatmadigi icin bu yontemi buldum (https://stackoverflow.com/a/41485484/20100031)
+                
             } message: {
                 Text("This is my first pop-up")
             }
