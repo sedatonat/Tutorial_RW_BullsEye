@@ -8,20 +8,11 @@
 import Foundation
 
 struct Game {
-    var target: Int = Int.random(in: 1...100) // Documentation dosyasindan bakip bulduk
-    var score: Int = 0
-    var round: Int = 1
+    var target = Int.random(in: 1...100) // Documentation dosyasindan bakip bulduk
+    var score = 0
+    var round = 1
     
     func points(sliderValue: Int) -> Int {  // "->" isareti fonksiyonun ne yapmasi gerektigini belirtiyor. Int ise cikacak sonucun formatini belirliyor
-        var difference: Int
-        if sliderValue > self.target {
-            difference = sliderValue - self.target
-        } else if self.target > sliderValue {
-            difference = self.target - sliderValue
-        } else {
-            difference = 0
-        }
-        var awardedPoints: Int = 100 - difference
-        return awardedPoints
+        100 - abs(target - sliderValue) // Eger tek satir bir kod varsa buna return eklemek zorunda degilsin Swift onu anliyor zaten. Burada "self." da kullanmadik cunku ayni class icerisinde
     }
 }

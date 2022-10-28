@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var alertIsVisible: Bool = false
-    @State private var sliderValue: Double = 10
-    @State private var game: Game = Game() // "Game = Game()" New Instance of Game demek
+    @State private var alertIsVisible = false
+    @State private var sliderValue = 50.0 // burada ".0" kismi onemli cunku ancak o sayede sistem onun Double oldugunu anliyor. aksi halde calismaz
+    @State private var game = Game() // "Game = Game()" New Instance of Game demek
     
     
     var body: some View {
@@ -31,7 +31,7 @@ struct ContentView: View {
             HStack {
                 Text("1")
                     .bold()
-                Slider(value: self.$sliderValue, in: 1...100) // "in: 1...100" sonrasinda "step:1" yazarsan 1'erli basamaklarla veriyor
+                Slider(value: self.$sliderValue, in: 1...100) // "in: 1...100" sonrasinda "step:1" yazarsan 1'erli basamaklarla veriyor. Ayni Class icindeyse "self." kullanimina gerek yok #learn
                 Text("100")
                     .bold()
             }
