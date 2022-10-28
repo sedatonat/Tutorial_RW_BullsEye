@@ -22,14 +22,31 @@ final class Tutorial_RW_BullsEyeTests: XCTestCase { // Soldaki baklava isareti t
         game = nil // Ekledik
     }
     
-    func testExample() throws {  // Soldaki baklava isareti tiklandi
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        XCTAssertEqual(game.points(sliderValue: 50), 999) // Ekledik
+    func testScorePositive() {
+        var guess = game.target + 5
+        var score = game.points(sliderValue: guess)
+        XCTAssertEqual(score, 95)
     }
+    
+    func testScoreNegative() {
+        var guess = game.target - 5
+        var score = game.points(sliderValue: guess)
+        XCTAssertEqual(score, 95)
+    }
+    
+    
+    
+//    func testExample() throws {  // Soldaki baklava isareti tiklandi
+//        // This is an example of a functional test case.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        // Any test you write for XCTest can be annotated as throws and async.
+//        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+//        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+//        XCTAssertEqual(game.points(sliderValue: 50), 999) // Ekledik
+//    }
+  // Bu alani once calistikdik sonra pasife aldik
+    
+    
     
 //    func testPerformanceExample() throws {
 //        // This is an example of a performance test case.
@@ -37,7 +54,7 @@ final class Tutorial_RW_BullsEyeTests: XCTestCase { // Soldaki baklava isareti t
 //            // Put the code you want to measure the time of here.
 //        }
 //    }
-// Bu alani pasife aldik
+  // Bu alani pasife aldik
 
 // "Product / Test" 'e basarak calistirdik
     
