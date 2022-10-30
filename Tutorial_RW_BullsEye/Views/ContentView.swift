@@ -28,17 +28,21 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .lineSpacing(4.0)
                     .font(.footnote)
+                    .foregroundColor(Color("TextColor"))
                 Text(String(game.target)) // Text in icine Integer koyamayacagimiz icin onu String 'e cevirerek koyduk
                     .kerning(-1.0)
                     .font(.largeTitle)
                     .fontWeight(.black)
+                    .foregroundColor(Color("TextColor"))
                 
                 HStack {
                     Text("1")
                         .bold()
+                        .foregroundColor(Color("TextColor"))
                     Slider(value: self.$sliderValue, in: 1...100) // "in: 1...100" sonrasinda "step:1" yazarsan 1'erli basamaklarla veriyor. Ayni Class icindeyse "self." kullanimina gerek yok #learn
                     Text("100")
                         .bold()
+                        .foregroundColor(Color("TextColor"))
                 }
                 .padding()
                 
@@ -84,15 +88,23 @@ struct ContentView_Previews: PreviewProvider {
         
         // Light Mode
         ContentView()
+            .previewDisplayName("Light - P")
+            .previewInterfaceOrientation(.portrait)
         ContentView()
+            .previewDisplayName("Light - LS_L")
+            .previewInterfaceOrientation(.landscapeLeft)
             .previewLayout(
                 .fixed(width:568, height:320)
             )
         
         // Dark Mode
         ContentView()
+            .previewDisplayName("Dark - P")
+            .previewInterfaceOrientation(.portrait)
             .preferredColorScheme(.dark)
         ContentView()
+            .previewDisplayName("Dark - LS_L")
+            .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
             .previewLayout(
                 .fixed(width:568, height:320)
