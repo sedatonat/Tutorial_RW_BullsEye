@@ -86,30 +86,27 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        // Light Mode
+        // Light Mode - Portrait
         ContentView()
             .previewDisplayName("Light - P")
             .previewInterfaceOrientation(.portrait)
+        
+        // Light Mode - Landscape - Left
         ContentView()
             .previewDisplayName("Light - LS_L")
             .previewInterfaceOrientation(.landscapeLeft)
-            .previewLayout(
-                .fixed(width:568, height:320)
-            )
         
-        // Dark Mode
+        // Dark Mode - Portrait
         ContentView()
             .previewDisplayName("Dark - P")
             .previewInterfaceOrientation(.portrait)
             .preferredColorScheme(.dark)
+        
+        // Dark Mode - Landscape - Left
         ContentView()
             .previewDisplayName("Dark - LS_L")
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
-            .previewLayout(
-                .fixed(width:568, height:320)
-            )
-        
-            
+
     }
 }
