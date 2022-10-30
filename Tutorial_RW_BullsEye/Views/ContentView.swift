@@ -81,10 +81,23 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        
+        // Light Mode
         ContentView()
         ContentView()
             .previewLayout(
                 .fixed(width:568, height:320)
             )
+        
+        // Dark Mode
+        ContentView()
+            .preferredColorScheme(.dark)
+        ContentView()
+            .preferredColorScheme(.dark)
+            .previewLayout(
+                .fixed(width:568, height:320)
+            )
+        
+            
     }
 }
