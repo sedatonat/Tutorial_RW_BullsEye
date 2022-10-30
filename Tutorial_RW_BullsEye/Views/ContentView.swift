@@ -16,6 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         
+        
         ZStack{
             
             Color("BackgroundColor")
@@ -45,6 +46,7 @@ struct ContentView: View {
                         .foregroundColor(Color("TextColor"))
                 }
                 .padding()
+                
                 
                 Button(action: {
                     print("Test")
@@ -79,7 +81,8 @@ struct ContentView: View {
             
             
         }
-        .ignoresSafeArea()
+        
+        
     }
 }
 
@@ -95,6 +98,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .previewDisplayName("Light - LS_L")
             .previewInterfaceOrientation(.landscapeLeft)
+//            .previewLayout(.fixed(width:568, height:320))
         
         // Dark Mode - Portrait
         ContentView()
@@ -107,6 +111,7 @@ struct ContentView_Previews: PreviewProvider {
             .previewDisplayName("Dark - LS_L")
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
-
+//            .previewLayout(.fixed(width:568, height:320))
+        
     }
 }
