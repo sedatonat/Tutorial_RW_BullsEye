@@ -18,9 +18,9 @@ struct ContentView: View {
         
         ZStack{
             
-            Color(red: 243.0 / 255.0, green: 248.0 / 255.0, blue: 253.0 / 255.0)
+            Color("BackgroundColor")
                 .ignoresSafeArea()
-                
+            
             VStack {
                 Text("🎯🎯🎯\n Put the Bullseye as close as you can".uppercased())
                     .bold()
@@ -41,7 +41,7 @@ struct ContentView: View {
                         .bold()
                 }
                 .padding()
-                    
+                
                 Button(action: {
                     print("Test")
                     self.alertIsVisible = true
@@ -50,21 +50,29 @@ struct ContentView: View {
                         .font(.title3)
                         .bold()
                 }
-                        .padding(20.0)
-                        .background(Color.blue)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(21)
+                .padding(20.0)
+                .background(
+                    ZStack {
+                        Color("ButtonColor")
+                        LinearGradient(gradient:
+                                        Gradient(colors: [Color.white.opacity(0.3), Color.clear]),
+                                       startPoint: .top, endPoint: .bottom
+                        )
+                    }
+                )
+                .foregroundColor(Color.white)
+                .cornerRadius(21)
                 
                 // This whole part was copied from the Tutorial
                 .alert("Hello there!", isPresented: $alertIsVisible) {
                     Button("Awesome!") { }
-                  } message: {
+                } message: {
                     let roundedValue = Int(sliderValue.rounded())
                     Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round.")
-                  }
+                }
                 
             }
-
+            
             
         }
         .ignoresSafeArea()

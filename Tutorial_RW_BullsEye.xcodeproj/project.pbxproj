@@ -65,7 +65,6 @@
 		E33CFE58290A1D3F00314174 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E397AB2B2905B1A8008B79F2 /* Assets.xcassets */,
 				E397AB2D2905B1A8008B79F2 /* Preview Content */,
 				E37DA99C290A21A500910688 /* Game.swift */,
 			);
@@ -83,6 +82,7 @@
 		E33CFE5A290A1E2300314174 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E397AB2B2905B1A8008B79F2 /* Assets.xcassets */,
 				E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */,
 			);
 			path = App;
