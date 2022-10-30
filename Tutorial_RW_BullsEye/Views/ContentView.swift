@@ -23,18 +23,9 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("🎯🎯🎯\n Put the Bullseye as close as you can".uppercased())
-                    .bold()
-                    .kerning(2.0)
-                    .multilineTextAlignment(.center)
-                    .lineSpacing(4.0)
-                    .font(.footnote)
-                    .foregroundColor(Color("TextColor"))
-                Text(String(game.target)) // Text in icine Integer koyamayacagimiz icin onu String 'e cevirerek koyduk
-                    .kerning(-1.0)
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .foregroundColor(Color("TextColor"))
+                
+               InstructionsView(game: $game)
+                
                 
                 HStack {
                     Text("1")
@@ -85,6 +76,25 @@ struct ContentView: View {
         
     }
 }
+
+
+
+struct InstructionsView: View {
+    
+    @Binding var game: Game
+    
+    var body: some View {
+     
+        VStack {
+            InstructionText(text: "Put the Bullseye as close as you can to") // Ilgili modulde Preview 'un olmasi sart degil
+                .padding(.leading, 30.0)
+                .padding(.trailing, 30.0)
+            BigNumberText(text:  String(game.target))
+        }
+        
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
