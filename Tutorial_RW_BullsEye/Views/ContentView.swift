@@ -50,9 +50,6 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                     .cornerRadius(21)
             
-            
-
-            
             // This whole part was copied from the Tutorial
             .alert("Hello there!", isPresented: $alertIsVisible) {
                 Button("Awesome!") { }
