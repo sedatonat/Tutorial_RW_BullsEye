@@ -26,6 +26,18 @@ struct InstructionText: View {
 
 // ----------------
 
+struct SliderLabelText: View {
+    var text: String
+    var body: some View {
+        Text(text)
+            .bold()
+            .foregroundColor(Color("TextColor"))
+    }
+}
+
+
+// ----------------
+
 struct BigNumberText: View {
     var text: String
     var body: some View {
@@ -36,14 +48,6 @@ struct BigNumberText: View {
             .foregroundColor(Color("TextColor"))
     }
 }
-
-
-// ----------------
-
-
-
-
-
 
 
 // --------------------------------------------------------

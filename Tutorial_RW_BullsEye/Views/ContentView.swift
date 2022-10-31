@@ -27,14 +27,11 @@ struct ContentView: View {
                 InstructionsView(game: $game)
                 
                 
+//        SliderView(sliderValue: $sliderValue)
                 HStack {
-                    Text("1")
-                        .bold()
-                        .foregroundColor(Color("TextColor"))
+                    SliderLabelText(text: "1")
                     Slider(value: self.$sliderValue, in: 1...100) // "in: 1...100" sonrasinda "step:1" yazarsan 1'erli basamaklarla veriyor. Ayni Class icindeyse "self." kullanimina gerek yok #learn
-                    Text("100")
-                        .bold()
-                        .foregroundColor(Color("TextColor"))
+                    SliderLabelText(text: "100")
                 }
                 .padding()
                 
@@ -86,6 +83,22 @@ struct InstructionsView: View {
         }
     }
 }
+
+
+// ----------------
+
+//struct SliderView: View {
+//    @Binding var sliderValue = Double
+//
+//    var body: some View {
+//        HStack {
+//            SliderLabelText(text: "1")
+//            Slider(value: self.$sliderValue, in: 1...100) // "in: 1...100" sonrasinda "step:1" yazarsan 1'erli basamaklarla veriyor. Ayni Class icindeyse "self." kullanimina gerek yok #learn
+//            SliderLabelText(text: "100")
+//        }
+//        .padding()
+//    }
+//}
 
 
 // --------------------------------------------------------
