@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E30683CE290B69F3007B4C8C /* Tutorial_RW_BullsEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30683CD290B69F3007B4C8C /* Tutorial_RW_BullsEyeTests.swift */; };
+		E306C722291049A5006FA724 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306C721291049A5006FA724 /* Shapes.swift */; };
 		E37DA99D290A21A500910688 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DA99C290A21A500910688 /* Game.swift */; };
 		E397AB282905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */; };
 		E397AB2A2905B1A7008B79F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397AB292905B1A7008B79F2 /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		E30683CB290B69F3007B4C8C /* Tutorial_RW_BullsEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tutorial_RW_BullsEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30683CD290B69F3007B4C8C /* Tutorial_RW_BullsEyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial_RW_BullsEyeTests.swift; sourceTree = "<group>"; };
+		E306C721291049A5006FA724 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		E37DA99C290A21A500910688 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E397AB242905B1A7008B79F2 /* Tutorial_RW_BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial_RW_BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E397AB272905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial_RW_BullsEyeApp.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				E397AB292905B1A7008B79F2 /* ContentView.swift */,
 				E3CF2AE5290E91BC00A0DD9B /* TextViews.swift */,
+				E306C721291049A5006FA724 /* Shapes.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				E397AB2A2905B1A7008B79F2 /* ContentView.swift in Sources */,
 				E3CF2AE6290E91BC00A0DD9B /* TextViews.swift in Sources */,
+				E306C722291049A5006FA724 /* Shapes.swift in Sources */,
 				E37DA99D290A21A500910688 /* Game.swift in Sources */,
 				E397AB282905B1A7008B79F2 /* Tutorial_RW_BullsEyeApp.swift in Sources */,
 			);
