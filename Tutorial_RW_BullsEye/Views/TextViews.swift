@@ -7,12 +7,12 @@
 
 import SwiftUI
 
+
+// ----------------
+
 struct InstructionText: View {
     var text: String
-    
-    
     var body: some View {
-        
         Text(text.uppercased())
             .bold()
             .kerning(2.0)
@@ -20,28 +20,33 @@ struct InstructionText: View {
             .lineSpacing(4.0)
             .font(.footnote)
             .foregroundColor(Color("TextColor"))
-        
     }
 }
 
 
+// ----------------
+
 struct BigNumberText: View {
     var text: String
-    
     var body: some View {
-        
         Text(text) // Text in icine Integer koyamayacagimiz icin onu String 'e cevirerek koyduk
             .kerning(-1.0)
             .font(.largeTitle)
             .fontWeight(.black)
             .foregroundColor(Color("TextColor"))
-        
     }
 }
 
 
+// ----------------
 
 
+
+
+
+
+
+// --------------------------------------------------------
 
 struct TextViews_Previews: PreviewProvider {
     static var previews: some View {

@@ -24,7 +24,7 @@ struct ContentView: View {
             
             VStack {
                 
-               InstructionsView(game: $game)
+                InstructionsView(game: $game)
                 
                 
                 HStack {
@@ -60,6 +60,7 @@ struct ContentView: View {
                 .foregroundColor(Color.white)
                 .cornerRadius(21)
                 
+                
                 // This whole part was copied from the Tutorial
                 .alert("Hello there!", isPresented: $alertIsVisible) {
                     Button("Awesome!") { }
@@ -67,34 +68,27 @@ struct ContentView: View {
                     let roundedValue = Int(sliderValue.rounded())
                     Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round.")
                 }
-                
             }
-            
-            
         }
-        
-        
     }
 }
 
-
+// ----------------
 
 struct InstructionsView: View {
-    
     @Binding var game: Game
-    
     var body: some View {
-     
         VStack {
             InstructionText(text: "Put the Bullseye as close as you can to") // Ilgili modulde Preview 'un olmasi sart degil
                 .padding(.leading, 30.0)
                 .padding(.trailing, 30.0)
             BigNumberText(text:  String(game.target))
         }
-        
     }
 }
 
+
+// --------------------------------------------------------
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -108,7 +102,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .previewDisplayName("Light - LS_L")
             .previewInterfaceOrientation(.landscapeLeft)
-//            .previewLayout(.fixed(width:568, height:320))
+        //            .previewLayout(.fixed(width:568, height:320))
         
         // Dark Mode - Portrait
         ContentView()
@@ -121,7 +115,7 @@ struct ContentView_Previews: PreviewProvider {
             .previewDisplayName("Dark - LS_L")
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
-//            .previewLayout(.fixed(width:568, height:320))
+        //            .previewLayout(.fixed(width:568, height:320))
         
     }
 }
