@@ -8,44 +8,40 @@
 import SwiftUI
 
 struct RoundedImageViewStroked: View {
-    var systemName: String = "arrow.counterclockwise" // Tutoriel 'da bu Preview kismindaydi. ben buraya aldim
-    
-    
-    var body: some View {
-        Image(systemName: systemName)
-            .font(.title)
-            .foregroundColor(Color("TextColor"))
-            .frame(width: 56.0, height:56.0)
-    }
+  var systemName: String
+
+  var body: some View {
+    Image(systemName: systemName)
+      .font(.title)
+      .foregroundColor(Color("TextColor"))
+      .frame(width: 56.0, height: 56.0)
+  }
 }
 
+struct RoundedImageViewFilled: View {
+  var systemName: String
 
-struct RoundedViews_Previews2: PreviewProvider {
-    static var previews: some View {
-        
-        // Light Mode - Portrait
-        RoundedImageViewStroked()
-            .previewDisplayName("Light - P")
-            .previewInterfaceOrientation(.portrait)
-        
-        // Light Mode - Landscape - Left
-        RoundedImageViewStroked()
-            .previewDisplayName("Light - LS_L")
-            .previewInterfaceOrientation(.landscapeLeft)
-            .previewLayout(.fixed(width:568, height:320))
-        
-        // Dark Mode - Portrait
-        RoundedImageViewStroked()
-            .previewDisplayName("Dark - P")
-            .previewInterfaceOrientation(.portrait)
-            .preferredColorScheme(.dark)
-        
-        // Dark Mode - Landscape - Left
-        RoundedImageViewStroked()
-            .previewDisplayName("Dark - LS_L")
-            .previewInterfaceOrientation(.landscapeLeft)
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width:568, height:320))
-        
+  var body: some View {
+    Image(systemName: systemName)
+      .font(.title)
+      .foregroundColor(Color("TextColor"))
+      .frame(width: 56.0, height: 56.0)
+  }
+}
+
+struct PreviewView: View {
+  var body: some View {
+    VStack(spacing: 10) {
+      RoundedImageViewStroked(systemName: "arrow.counterclockwise")
+      RoundedImageViewStroked(systemName: "list.dash")
     }
+  }
+}
+
+struct RoundViews_Previews: PreviewProvider {
+  static var previews: some View {
+    PreviewView()
+    PreviewView()
+      .preferredColorScheme(.dark)
+  }
 }
