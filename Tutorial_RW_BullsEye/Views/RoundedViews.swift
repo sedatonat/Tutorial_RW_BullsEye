@@ -19,8 +19,33 @@ struct RoundedImageViewStroked: View {
     }
 }
 
-struct RoundedViews_Previews: PreviewProvider {
+
+struct RoundedViews_Previews2: PreviewProvider {
     static var previews: some View {
+        
+        // Light Mode - Portrait
         RoundedImageViewStroked()
+            .previewDisplayName("Light - P")
+            .previewInterfaceOrientation(.portrait)
+        
+        // Light Mode - Landscape - Left
+        RoundedImageViewStroked()
+            .previewDisplayName("Light - LS_L")
+            .previewInterfaceOrientation(.landscapeLeft)
+            .previewLayout(.fixed(width:568, height:320))
+        
+        // Dark Mode - Portrait
+        RoundedImageViewStroked()
+            .previewDisplayName("Dark - P")
+            .previewInterfaceOrientation(.portrait)
+            .preferredColorScheme(.dark)
+        
+        // Dark Mode - Landscape - Left
+        RoundedImageViewStroked()
+            .previewDisplayName("Dark - LS_L")
+            .previewInterfaceOrientation(.landscapeLeft)
+            .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width:568, height:320))
+        
     }
 }
