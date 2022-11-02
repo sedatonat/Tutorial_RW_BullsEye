@@ -70,8 +70,8 @@ struct HitMeButton: View {
     
     var body: some View {
         Button(action: {
-            print("Hello, SwiftUI!")
             alertIsVisible = true
+            game.startNewRound(points: game.points(sliderValue: Int(sliderValue))) // sliderValue Int oldugu icin formatini Int() ile degistirdik
         }) {
             Text("Hit me".uppercased())
                 .bold()

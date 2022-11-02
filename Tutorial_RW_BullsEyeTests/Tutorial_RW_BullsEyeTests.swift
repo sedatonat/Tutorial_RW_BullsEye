@@ -34,6 +34,13 @@ final class Tutorial_RW_BullsEyeTests: XCTestCase { // Soldaki baklava isareti t
         XCTAssertEqual(score, 95)
     }
     
+    func testNewRound() {
+        game.startNewRound(points: 100)
+        XCTAssertEqual(game.score, 100)
+        XCTAssertEqual(game.round, 2)
+    }
+    
+    
     
     
 //    func testExample() throws {  // Soldaki baklava isareti tiklandi
