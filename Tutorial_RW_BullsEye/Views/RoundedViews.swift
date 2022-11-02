@@ -15,8 +15,18 @@ struct RoundedImageViewStroked: View {
       .font(.title)
       .foregroundColor(Color("TextColor"))
       .frame(width: 56.0, height: 56.0)
+      .overlay(
+        Circle()
+            .strokeBorder(
+            Color("ButtonStroeColor"),
+            lineWidth: 1.0,
+            antialiased: true
+            )
+      )
   }
+    
 }
+
 
 struct RoundedImageViewFilled: View {
   var systemName: String
@@ -24,19 +34,25 @@ struct RoundedImageViewFilled: View {
   var body: some View {
     Image(systemName: systemName)
       .font(.title)
-      .foregroundColor(Color("TextColor"))
+      .foregroundColor(Color("ButtonFilledTextColor"))
       .frame(width: 56.0, height: 56.0)
+      .background(
+        Circle()
+            .fill(Color("ButtonFilledBackgroundColor"))
+      )
   }
 }
+
 
 struct PreviewView: View {
   var body: some View {
     VStack(spacing: 10) {
       RoundedImageViewStroked(systemName: "arrow.counterclockwise")
-      RoundedImageViewStroked(systemName: "list.dash")
+      RoundedImageViewFilled(systemName: "list.dash")
     }
   }
 }
+
 
 struct RoundViews_Previews: PreviewProvider {
   static var previews: some View {
@@ -44,4 +60,5 @@ struct RoundViews_Previews: PreviewProvider {
     PreviewView()
       .preferredColorScheme(.dark)
   }
+    
 }
