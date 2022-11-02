@@ -17,8 +17,7 @@ struct ContentView: View {
     var body: some View {
         
         ZStack{
-            Color("BackgroundColor")
-                .ignoresSafeArea()
+            BackgroundView(game: $game)
             
             VStack {
                 InstructionsView(game: $game)
