@@ -32,6 +32,21 @@ struct SliderLabelText: View {
         Text(text)
             .bold()
             .foregroundColor(Color("TextColor"))
+            .frame(width: 35.0) // ContentView 'da sliderdaki 50 pozisyonu tam ortaya gelsin diye
+    }
+}
+
+
+// ----------------
+
+struct LabelText: View {
+    var text: String
+    var body: some View {
+        Text(text)
+            .bold()
+            .foregroundColor(Color("TextColor"))
+            .kerning(1.5)
+            .font(.caption)
     }
 }
 
@@ -56,31 +71,12 @@ struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         
         VStack {
-            // Light Mode - Portrait
-            InstructionText(text: "text")
+            InstructionText(text: "Instructions")
             BigNumberText(text: "999")
-                .previewDisplayName("Light - P")
-                .previewInterfaceOrientation(.portrait)
+            SliderLabelText(text: "99")
+            LabelText(text: "9")
         }
         
-        // Light Mode - Landscape - Left
-        InstructionText(text: "text")
-            .previewDisplayName("Light - LS_L")
-            .previewInterfaceOrientation(.landscapeLeft)
-            .previewLayout(.fixed(width:568, height:320))
-        
-        // Dark Mode - Portrait
-        InstructionText(text: "text")
-            .previewDisplayName("Dark - P")
-            .previewInterfaceOrientation(.portrait)
-            .preferredColorScheme(.dark)
-        
-        // Dark Mode - Landscape - Left
-        InstructionText(text: "text")
-            .previewDisplayName("Dark - LS_L")
-            .previewInterfaceOrientation(.landscapeLeft)
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width:568, height:320))
         
     }
 }
