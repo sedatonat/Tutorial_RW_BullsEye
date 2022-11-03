@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// ---------------------------------------
+// Collecting all the parts together
+
 struct BackgroundView: View {
     @Binding var game: Game
     var body: some View {
@@ -16,14 +19,13 @@ struct BackgroundView: View {
             BottomView(game: $game)
         }
         .padding()
-        .background(
-            Color("BackgroundColor")
-                .edgesIgnoringSafeArea(.all)
-        )
+        .background( RingsView() )
     }
 }
 
+
 // ---------------------------------------
+// Top part
 
 struct TopView: View {
     @Binding var game: Game
@@ -45,7 +47,31 @@ struct TopView: View {
     }
 }
 
+
 // ---------------------------------------
+
+struct RingsView: View {
+    var body: some View {
+        ZStack {
+            Color("BackgroundColor")
+                .edgesIgnoringSafeArea(.all)
+            ForEach(1..<6) { ring in
+                let size = CGFloat(ring * 100)
+                Circle()
+                    .stroke(lineWidth: 20.0)
+                    .frame(width: size, height: size)
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// ---------------------------------------
+// Bottom part
 
 struct NumberView: View {
     var title: String
@@ -57,8 +83,6 @@ struct NumberView: View {
         }
     }
 }
-
-// ---------------------------------------
 
 struct BottomView: View {
     @Binding var game: Game
@@ -76,6 +100,7 @@ struct BottomView: View {
         }
     }
 }
+
 
 // ---------------------------------------
 
