@@ -12,8 +12,19 @@ struct Game {
     var score = 0
     var round = 1
     
-    func points(sliderValue: Int) -> Int {  // "->" isareti fonksiyonun ne yapmasi gerektigini belirtiyor. Int ise cikacak sonucun formatini belirliyor
-        100 - abs(target - sliderValue) // Eger tek satir bir kod varsa buna return eklemek zorunda degilsin Swift onu anliyor zaten. Burada "self." da kullanmadik cunku ayni class icerisinde
+    // Previous form
+    //    func points(sliderValue: Int) -> Int {  // "->" isareti fonksiyonun ne yapmasi gerektigini belirtiyor. Int ise cikacak sonucun formatini belirliyor
+    //        100 - abs(target - sliderValue) // Eger tek satir bir kod varsa buna return eklemek zorunda degilsin Swift onu anliyor zaten. Burada "self." da kullanmadik cunku ayni class icerisinde
+    
+    func points(sliderValue: Int) -> Int {
+        let difference = abs(target - sliderValue)
+        let bonus: Int
+        //--
+        if difference == 0 { bonus = 100 }
+        else if difference <= 2 { bonus = 50 }
+        else { bonus = 0 }
+        //--
+        return 100 - difference + bonus
     }
     
     mutating func startNewRound(points: Int) { // Yukarida koydugumuz "-> Int" neden burada yok? #learn
