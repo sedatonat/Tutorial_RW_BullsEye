@@ -71,7 +71,7 @@ struct HitMeButton: View {
     var body: some View {
         Button(action: {
             alertIsVisible = true
-            game.startNewRound(points: game.points(sliderValue: Int(sliderValue))) // sliderValue Int oldugu icin formatini Int() ile degistirdik
+//            game.startNewRound(points: game.points(sliderValue: Int(sliderValue))) // sliderValue Int oldugu icin formatini Int() ile degistirdik
         }) {
             Text("Hit me".uppercased())
                 .bold()
@@ -92,7 +92,13 @@ struct HitMeButton: View {
         )
         .alert(isPresented: $alertIsVisible, content: {
             let roundedValue = Int(sliderValue.rounded())
-            return Alert(title: Text("Hello there!"), message: Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round."), dismissButton: .default(Text("Awesome!")))
+            let points = game.points(sliderValue: roundedValue) // Burada sonucu sabitledik yani hafizaya aldik, ki asagidaki alerti vermeden once sonuc degismesin
+            
+            return Alert(title: Text("Hello there!"), message: Text("The slider's value is \(roundedValue).\n" + "You scored \(points) points this round."), dismissButton: .default(Text("Awesome!")) {
+                
+                game.startNewRound(points: points)
+                
+            })
         })
     }
 }

@@ -17,7 +17,7 @@ struct RoundedImageViewStroked: View {
             .overlay(
                 Circle()
                     .strokeBorder(
-                        Color("ButtonStroeColor"),
+                        Color("ButtonStrokeColor"),
                         lineWidth: 1.0,
                         antialiased: true
                     )
