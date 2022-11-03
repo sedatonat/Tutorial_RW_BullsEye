@@ -40,6 +40,7 @@ final class Tutorial_RW_BullsEyeTests: XCTestCase { // Soldaki baklava isareti t
         XCTAssertEqual(game.round, 2)
     }
     
+    // istenilen sonucun alınıp alınmadığının kontrolü
     func testScoreExact() {
         let guess = game.target
         let score = game.points(sliderValue: guess)
@@ -52,6 +53,14 @@ final class Tutorial_RW_BullsEyeTests: XCTestCase { // Soldaki baklava isareti t
         XCTAssertEqual(score, 98 + 50)
     }
     
+    func testRestart() {
+        game.startNewRound(points: 100)
+        XCTAssertNotEqual(game.score, 0) // Hiçbir puan alınmamış olacak
+        XCTAssertNotEqual(game.round, 1) // İlk roun olacak
+        game.restart()
+        XCTAssertEqual(game.score, 0)
+        XCTAssertEqual(game.round, 1)
+    }
     
 //    func testExample() throws {  // Soldaki baklava isareti tiklandi
 //        // This is an example of a functional test case.
