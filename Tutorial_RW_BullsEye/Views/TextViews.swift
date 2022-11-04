@@ -106,7 +106,7 @@ struct TextViews_Previews: PreviewProvider {
             BigNumberText(text: "999")
             SliderLabelText(text: "99")
             LabelText(text: "9")
-            BodyText(text: "You earned 200 points\n🎉🎉🎉")
+            BodyText(text: "You scored 200 points\n🎉🎉🎉")
             ButtonText(text: "Start New Round")
                 .padding() // Only for preview purpose
         }

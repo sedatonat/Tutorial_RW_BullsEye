@@ -54,10 +54,6 @@ struct RingsView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    
-    
-    
-    
     var body: some View {
         ZStack {
             Color("BackgroundColor")
@@ -87,10 +83,6 @@ struct RingsView: View {
         }
     }
 }
-
-
-
-
 
 
 // ---------------------------------------

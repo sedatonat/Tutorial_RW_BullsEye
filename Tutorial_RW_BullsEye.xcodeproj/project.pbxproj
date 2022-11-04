@@ -16,6 +16,7 @@
 		E397AB2A2905B1A7008B79F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397AB292905B1A7008B79F2 /* ContentView.swift */; };
 		E397AB2C2905B1A8008B79F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397AB2B2905B1A8008B79F2 /* Assets.xcassets */; };
 		E397AB2F2905B1A8008B79F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397AB2E2905B1A8008B79F2 /* Preview Assets.xcassets */; };
+		E3AAC43D2914A21C00AB2F12 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AAC43C2914A21C00AB2F12 /* PointsView.swift */; };
 		E3CF2AE6290E91BC00A0DD9B /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF2AE5290E91BC00A0DD9B /* TextViews.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		E397AB292905B1A7008B79F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E397AB2B2905B1A8008B79F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E397AB2E2905B1A8008B79F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3AAC43C2914A21C00AB2F12 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		E3CF2AE5290E91BC00A0DD9B /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				E397AB292905B1A7008B79F2 /* ContentView.swift */,
+				E3AAC43C2914A21C00AB2F12 /* PointsView.swift */,
 				E321CD922910BEEE005CBB77 /* RoundedViews.swift */,
 				E3CF2AE5290E91BC00A0DD9B /* TextViews.swift */,
 				E306C721291049A5006FA724 /* Shapes.swift */,
@@ -247,6 +250,7 @@
 				E321CD932910BEEE005CBB77 /* RoundedViews.swift in Sources */,
 				E397AB2A2905B1A7008B79F2 /* ContentView.swift in Sources */,
 				E3CF2AE6290E91BC00A0DD9B /* TextViews.swift in Sources */,
+				E3AAC43D2914A21C00AB2F12 /* PointsView.swift in Sources */,
 				E30C445C2912032A00CB7A62 /* BackgroundView.swift in Sources */,
 				E306C722291049A5006FA724 /* Shapes.swift in Sources */,
 				E37DA99D290A21A500910688 /* Game.swift in Sources */,
