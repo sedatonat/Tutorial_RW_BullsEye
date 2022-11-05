@@ -16,11 +16,11 @@ struct Shapes: View {
                 Circle()
                     .strokeBorder(Color.blue, lineWidth: 20.0)
                     .frame(width: 200.0, height: 100.0)
+                    .transition(.scale)
             }
             RoundedRectangle(cornerRadius: 20.0)
                 .fill(Color.blue)
                 .frame(width: wideShapes ? 200.0 : 100.0, height: 100.0)
-                .animation(.easeInOut, value: <#T##V#>)
             Capsule()
                 .fill(Color.blue)
                 .frame(width: wideShapes ? 200.0 : 100.0, height: 100.0)
@@ -30,7 +30,9 @@ struct Shapes: View {
             Button(
                 action:
                     {
-                        wideShapes.toggle()
+                        withAnimation {
+                            wideShapes.toggle()
+                        }
                     })
             {
                 Text("Animate")
