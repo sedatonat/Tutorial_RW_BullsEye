@@ -92,6 +92,21 @@ struct DateText: View {
 
 // ----------------
 
+struct BigBoldText: View {
+    let text: String
+    var body: some View {
+        Text(text.uppercased())
+            .kerning(2.0)
+            .foregroundColor(Color("TextColor"))
+            .font(.title)
+            .fontWeight(.black)
+        
+    }
+}
+
+
+// ----------------
+
 struct ButtonText: View {
     var text: String
     var body: some View {
@@ -135,6 +150,7 @@ struct TextViews_Previews: PreviewProvider {
                 .padding() // Only for preview purpose
             ScoreText(score: 459)
             DateText(date: Date())
+            BigBoldText(text: "Leaderboard")
         }
         
     }
