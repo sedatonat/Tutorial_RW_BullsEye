@@ -9,24 +9,36 @@ import SwiftUI
 
 
 struct HeaderView: View {
+    @Environment (\.verticalSizeClass) var verticalSizeClass
+    @Environment (\.horizontalSizeClass) var horizontalSizeClass
+//    Bu kısım sayesinde yan çevirdiğimizde veya düz kullandığımızda Leaderboard yazısı sıkışmıyor
+    
     var body: some View {
         ZStack {
-            BigBoldText(text: "LeaderBoard")
+            HStack {
+                if verticalSizeClass == .regular
+                    &&
+                    horizontalSizeClass == .compact
+                {
+                    BigBoldText(text: "LeaderBoard")
+                        .padding(.leading)
+                    Spacer()
+                } else {
+                    BigBoldText(text: "LeaderBoard")
+                }
+            }
+                
             HStack {
                 Spacer()
                 
-                Button(
-                    action:
-                        {
-                            
-                        })
+                Button(action:{})
                 {
                     RoundedImageViewFilled(systemName: "xmark")
                         .padding(.trailing)
                 }
                 
-                
             }
+                
         }
     }
 }
