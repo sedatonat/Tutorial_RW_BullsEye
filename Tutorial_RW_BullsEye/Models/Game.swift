@@ -7,10 +7,17 @@
 
 import Foundation
 
+struct LeaderboardEntry {
+    let score: Int
+    let date: Date
+}
+
+
 struct Game {
     var target = Int.random(in: 1...100) // Documentation dosyasindan bakip bulduk
     var score = 0
     var round = 1
+    var leaderboardEntries: [LeaderboardEntry] = []
     
     // Previous form
     //    func points(sliderValue: Int) -> Int {  // "->" isareti fonksiyonun ne yapmasi gerektigini belirtiyor. Int ise cikacak sonucun formatini belirliyor
@@ -27,10 +34,17 @@ struct Game {
         return 100 - difference + bonus
     }
     
+    mutating func addToLeaderboard(point: Int) {
+        leaderboardEntries.append(LeaderboardEntry(score: point, date: Date()))
+        leaderboardEntries.sort { $0.score > $1.score }
+    }
+    
+    
     mutating func startNewRound(points: Int) { // Yukarida koydugumuz "-> Int" neden burada yok? #learn
         score += points
         round += 1
         target = Int.random(in: 1...100)
+        addToLeaderboard(point: points)
     }
     
     
@@ -38,6 +52,7 @@ struct Game {
         score = 0
         round = 1
         target = Int.random(in: 1...100)
+        //        addToLeaderboard(point: score)
     }
     
     
