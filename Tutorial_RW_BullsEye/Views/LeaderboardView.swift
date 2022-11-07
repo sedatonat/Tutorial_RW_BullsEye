@@ -11,6 +11,7 @@ import SwiftUI
 struct HeaderView: View {
     @Environment (\.verticalSizeClass) var verticalSizeClass
     @Environment (\.horizontalSizeClass) var horizontalSizeClass
+    @Binding var leaderboardIsShowing: Bool
 //    Bu kısım sayesinde yan çevirdiğimizde veya düz kullandığımızda Leaderboard yazısı sıkışmıyor
     
     var body: some View {
@@ -31,7 +32,10 @@ struct HeaderView: View {
             HStack {
                 Spacer()
                 
-                Button(action:{})
+                Button(action:{
+                    leaderboardIsShowing = false
+                    
+                })
                 {
                     RoundedImageViewFilled(systemName: "xmark")
                         .padding(.trailing)
@@ -98,12 +102,14 @@ struct RowView: View {
 // ----------------
 
 struct LeaderboardView: View {
+    @Binding var leaderboardIsShowing: Bool
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor")
                 .edgesIgnoringSafeArea(.all)
             VStack (spacing: 10) {
-                HeaderView()
+                HeaderView(leaderboardIsShowing: $leaderboardIsShowing)
                 LabelView()
                 RowView(index: 1, score: 10, date: Date())
             }
@@ -116,27 +122,29 @@ struct LeaderboardView: View {
 // ----------------
 
 struct LeaderboardView_Previews: PreviewProvider {
+    static private var leaderboardIsShowing = Binding.constant(false)
+    
     static var previews: some View {
                 
                 // Light Mode - Portrait
-                LeaderboardView()
+                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
                     .previewDisplayName("Light - P")
                     .previewInterfaceOrientation(.portrait)
                 
                 // Light Mode - Landscape - Left
-                LeaderboardView()
+                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
                     .previewDisplayName("Light - LS_L")
                     .previewInterfaceOrientation(.landscapeLeft)
                     .previewLayout(.fixed(width:568, height:320))
                 
                 // Dark Mode - Portrait
-                LeaderboardView()
+                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
                     .previewDisplayName("Dark - P")
                     .previewInterfaceOrientation(.portrait)
                     .preferredColorScheme(.dark)
                 
                 // Dark Mode - Landscape - Left
-                LeaderboardView()
+                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
                     .previewDisplayName("Dark - LS_L")
                     .previewInterfaceOrientation(.landscapeLeft)
                     .preferredColorScheme(.dark)

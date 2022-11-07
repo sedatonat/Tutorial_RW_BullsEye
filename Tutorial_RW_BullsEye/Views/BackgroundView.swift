@@ -7,28 +7,13 @@
 
 import SwiftUI
 
-// ---------------------------------------
-// Collecting all the parts together
-
-struct BackgroundView: View {
-    @Binding var game: Game
-    var body: some View {
-        VStack {
-            TopView(game: $game)
-            Spacer()
-            BottomView(game: $game)
-        }
-        .padding()
-        .background( RingsView() )
-    }
-}
-
 
 // ---------------------------------------
 // Top part
 
 struct TopView: View {
     @Binding var game: Game
+    @State private var leaderboardIsShowing = false // Default setting
     var body: some View {
         HStack {
             
@@ -42,7 +27,23 @@ struct TopView: View {
             //-Z
             
             Spacer()
-            RoundedImageViewFilled(systemName: "list.dash")
+            
+            Button(
+                action:
+                    {
+                        leaderboardIsShowing = true // Shows the View
+                    })
+            {
+                RoundedImageViewFilled(systemName: "list.dash")
+            }
+            .sheet(
+                isPresented: $leaderboardIsShowing,
+                onDismiss: {},
+                content:{ LeaderboardView(
+                leaderboardIsShowing: $leaderboardIsShowing
+                ) } // Doesn't work w/o curly brackets
+            )
+            
         }
     }
 }
@@ -113,6 +114,23 @@ struct BottomView: View {
                 text: String(game.round) // Roundu String 'e cevirdik
             )
         }
+    }
+}
+
+
+// ---------------------------------------
+// Collecting all the parts together
+
+struct BackgroundView: View {
+    @Binding var game: Game
+    var body: some View {
+        VStack {
+            TopView(game: $game)
+            Spacer()
+            BottomView(game: $game)
+        }
+        .padding()
+        .background( RingsView() )
     }
 }
 
