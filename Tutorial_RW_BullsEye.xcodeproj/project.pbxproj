@@ -39,6 +39,7 @@
 		E30C445B2912032A00CB7A62 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		E317D2E12917CB14000DC536 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Tutorial_RW_BullsEye/Models/Constants.swift; sourceTree = SOURCE_ROOT; };
 		E317D2E32917E7DB000DC536 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		E317D2E529189632000DC536 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E321CD922910BEEE005CBB77 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		E37DA99C290A21A500910688 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E397AB242905B1A7008B79F2 /* Tutorial_RW_BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial_RW_BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +97,7 @@
 				E306C721291049A5006FA724 /* Shapes.swift */,
 				E30C445B2912032A00CB7A62 /* BackgroundView.swift */,
 				E317D2E32917E7DB000DC536 /* LeaderboardView.swift */,
+				E317D2E529189632000DC536 /* MyPlayground.playground */,
 			);
 			path = Views;
 			sourceTree = "<group>";
