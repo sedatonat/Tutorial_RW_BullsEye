@@ -40,7 +40,7 @@ struct TopView: View {
                 isPresented: $leaderboardIsShowing,
                 onDismiss: {},
                 content:{ LeaderboardView(
-                leaderboardIsShowing: $leaderboardIsShowing
+                    leaderboardIsShowing: $leaderboardIsShowing, game: $game
                 ) } // Doesn't work w/o curly brackets
             )
             

@@ -19,6 +19,19 @@ struct Game {
     var round = 1
     var leaderboardEntries: [LeaderboardEntry] = []
     
+    init (loadTestData: Bool = false) {
+        if loadTestData { // if it is true
+            leaderboardEntries.append(LeaderboardEntry(score: 100, date: Date()))
+            leaderboardEntries.append(LeaderboardEntry(score: 80, date: Date()))
+            leaderboardEntries.append(LeaderboardEntry(score: 200, date: Date()))
+            leaderboardEntries.append(LeaderboardEntry(score: 50, date: Date()))
+            leaderboardEntries.append(LeaderboardEntry(score: 20, date: Date()))
+        }
+        
+        
+        
+    }
+    
     // Previous form
     //    func points(sliderValue: Int) -> Int {  // "->" isareti fonksiyonun ne yapmasi gerektigini belirtiyor. Int ise cikacak sonucun formatini belirliyor
     //        100 - abs(target - sliderValue) // Eger tek satir bir kod varsa buna return eklemek zorunda degilsin Swift onu anliyor zaten. Burada "self." da kullanmadik cunku ayni class icerisinde

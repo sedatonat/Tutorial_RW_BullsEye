@@ -12,7 +12,7 @@ struct HeaderView: View {
     @Environment (\.verticalSizeClass) var verticalSizeClass
     @Environment (\.horizontalSizeClass) var horizontalSizeClass
     @Binding var leaderboardIsShowing: Bool
-//    Bu kısım sayesinde yan çevirdiğimizde veya düz kullandığımızda Leaderboard yazısı sıkışmıyor
+    //    Bu kısım sayesinde yan çevirdiğimizde veya düz kullandığımızda Leaderboard yazısı sıkışmıyor
     
     var body: some View {
         ZStack {
@@ -28,7 +28,8 @@ struct HeaderView: View {
                     BigBoldText(text: "LeaderBoard")
                 }
             }
-                
+            .padding(.top)
+            
             HStack {
                 Spacer()
                 
@@ -42,7 +43,7 @@ struct HeaderView: View {
                 }
                 
             }
-                
+            
         }
     }
 }
@@ -91,7 +92,7 @@ struct RowView: View {
             RoundedRectangle(cornerRadius: .infinity) // .infinity makes it perfect round
                 .strokeBorder(Color("LeaderboardRowColor"), lineWidth: Constants.General.strokeWidth)
             
-            )
+        )
         .padding(.leading)
         .padding(.trailing)
         .frame(maxWidth: Constants.Leaderboard.leaderboardMaxRowWidth)
@@ -103,6 +104,7 @@ struct RowView: View {
 
 struct LeaderboardView: View {
     @Binding var leaderboardIsShowing: Bool
+    @Binding var game: Game
     
     var body: some View {
         ZStack {
@@ -111,9 +113,24 @@ struct LeaderboardView: View {
             VStack (spacing: 10) {
                 HeaderView(leaderboardIsShowing: $leaderboardIsShowing)
                 LabelView()
-                RowView(index: 1, score: 10, date: Date())
+                
+                ScrollView {
+                    VStack (spacing: 10) {
+                        ForEach(game.leaderboardEntries.indices) { i in // i = index
+                            let leaderboardEntry = game.leaderboardEntries[i]
+                            
+                            RowView(
+                                index: i,
+                                score: leaderboardEntry.score,
+                                date: leaderboardEntry.date
+                            )
+                            
+                        }
+                    }
+                }
+
             }
-//            .background(Color("BackgroundColor")) // Bu sadece kapsadığı alan kadar etki ediyor. ZStack içindeki ise tüm ekrana etki ediyor
+            //            .background(Color("BackgroundColor")) // Bu sadece kapsadığı alan kadar etki ediyor. ZStack içindeki ise tüm ekrana etki ediyor
         }
     }
 }
@@ -123,32 +140,33 @@ struct LeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static private var leaderboardIsShowing = Binding.constant(false)
+    static private var game = Binding.constant(Game(loadTestData: true))
     
     static var previews: some View {
-                
-                // Light Mode - Portrait
-                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
-                    .previewDisplayName("Light - P")
-                    .previewInterfaceOrientation(.portrait)
-                
-                // Light Mode - Landscape - Left
-                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
-                    .previewDisplayName("Light - LS_L")
-                    .previewInterfaceOrientation(.landscapeLeft)
-                    .previewLayout(.fixed(width:568, height:320))
-                
-                // Dark Mode - Portrait
-                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
-                    .previewDisplayName("Dark - P")
-                    .previewInterfaceOrientation(.portrait)
-                    .preferredColorScheme(.dark)
-                
-                // Dark Mode - Landscape - Left
-                LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
-                    .previewDisplayName("Dark - LS_L")
-                    .previewInterfaceOrientation(.landscapeLeft)
-                    .preferredColorScheme(.dark)
-                    .previewLayout(.fixed(width:568, height:320))
-                
+        
+        // Light Mode - Portrait
+        LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
+            .previewDisplayName("Light - P")
+            .previewInterfaceOrientation(.portrait)
+        
+        // Light Mode - Landscape - Left
+        LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
+            .previewDisplayName("Light - LS_L")
+            .previewInterfaceOrientation(.landscapeLeft)
+            .previewLayout(.fixed(width:568, height:320))
+        
+        // Dark Mode - Portrait
+        LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
+            .previewDisplayName("Dark - P")
+            .previewInterfaceOrientation(.portrait)
+            .preferredColorScheme(.dark)
+        
+        // Dark Mode - Landscape - Left
+        LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
+            .previewDisplayName("Dark - LS_L")
+            .previewInterfaceOrientation(.landscapeLeft)
+            .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width:568, height:320))
+        
     }
 }
